@@ -39,7 +39,7 @@ function VideoUploadPage() {
     }
 
     const onDrop = (files) => {
-        let formData = new FormData;
+        let formData = new FormData();
         const config = {
             header: {'conent-type': 'multipart/form-data'}
         }
@@ -48,7 +48,7 @@ function VideoUploadPage() {
         Axios.post('/api/video/uploadfiles', formData, config)
         .then(response => {
             if(response.data.success) {
-                
+                console.log("upload success data " , response.data)
             } else {
                 alert('업로드 실패')
             }
