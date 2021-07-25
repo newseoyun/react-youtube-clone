@@ -44,7 +44,17 @@ router.post("/uploadfiles", (req, res) => {
 })
 
 router.post("/thumbnail", (req, res) => {
+    let filePath = ""
+    let fileDuration = ""
 
+    // 비디오 정보 가져오기
+    ffmpeg.ffprobe(req.body.url, function(err, metadata) {
+        console.dir(metadata)
+        console.log(metadata.format.duration)
+        fileDuration = metadata.format.duration
+    })
+
+    // thumbnail 생성
     ffmpeg(req.body.url)
     .on('filenames', function(filenames) {
         console.log('Will generate ' + filenames.join(', '))
