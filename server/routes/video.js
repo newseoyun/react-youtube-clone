@@ -64,7 +64,7 @@ router.post("/thumbnail", (req, res) => {
     })
     .on('end', function() {
         console.log('Screenshots taken')
-        return res.json({ success: true, url: filePath, filename: filenames, fileDuration: fileDuration })
+        return res.json({ success: true, url: filePath, fileDuration: fileDuration })
     })
     .on('error', function(err) {
         console.error(err)
