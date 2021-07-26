@@ -39,7 +39,7 @@ router.post("/uploadfiles", (req, res) => {
         if (err) {
             return res.json({ success: false, err })
         }
-        return res.json({ success: true, url: res.req.file.path, filename: res.req.file.filename })
+        return res.json({ success: true, filePath: res.req.file.path, filename: res.req.file.filename })
     })
 })
 
