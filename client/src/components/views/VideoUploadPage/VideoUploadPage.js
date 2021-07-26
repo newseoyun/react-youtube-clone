@@ -54,18 +54,18 @@ function VideoUploadPage() {
                 console.log("upload success data " , response.data)
 
                 let variable = {
-                    filePath: response.data.url,
+                    filePath: response.data.filePath,
                     filename: response.data.filename
                 }
 
-                setFilePath(response.data.url)
+                setFilePath(response.data.filePath)
 
                 Axios.post('/api/video/thumbnail', variable)
                 .then(response => {
                     if(response.data.success) {
                         console.log(response.data)
                         setDuration(response.data.fileDuration)
-                        setThumbnailPath(response.data.url)
+                        setThumbnailPath(response.data.thumbsFilePath)
 
                     } else {
                         alert('썸네일 생성 실패')
