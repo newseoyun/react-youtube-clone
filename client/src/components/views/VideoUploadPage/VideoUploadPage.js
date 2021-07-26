@@ -54,7 +54,7 @@ function VideoUploadPage() {
                 console.log("upload success data " , response.data)
 
                 let variable = {
-                    url: response.data.url,
+                    filePath: response.data.url,
                     filename: response.data.filename
                 }
 
