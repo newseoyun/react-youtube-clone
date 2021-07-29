@@ -73,6 +73,9 @@ function VideoUploadPage() {
                 })
 
             } else {
+
+                console.log("fail ")
+                console.log(response.data)
                 alert('업로드 실패')
             }
         })
