@@ -142,3 +142,4 @@ out/
 
 ### Custom : DB 접속 정보 파일 ###
 dev.js
+uploads/
